@@ -25,3 +25,22 @@ m2 = Tag.create :language => 'JavaScript'
 m3 = Tag.create :language => 'HTML'
 m4 = Tag.create :language => 'SQL'
 puts "#{ Tag.count } tags."
+
+#Associations###############################################################
+puts "Posts and Comments."
+p1.comments << c1
+p2.comments << c3
+p3.comments << c4 << c1
+p4.comments << c2
+p5.comments << c1
+
+puts "Posts and Tags"
+p1.tags << m1
+p2.tags << m2
+p3.tags << m3
+p4.tags << m4 << m1
+
+puts "Users and posts"
+u1.posts << p1 << p4
+u2.posts << p2
+u3.posts << p3 << p5
