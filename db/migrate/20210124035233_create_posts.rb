@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :title
       t.text :example
       t.text :content
-      t.integer :user_id, foreign_key: true
+      t.integer :user_id
 
       t.timestamps
     end
