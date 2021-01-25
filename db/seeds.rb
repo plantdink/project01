@@ -1,7 +1,7 @@
 User.destroy_all
-u1 = User.create :email => 'craigsy@ga.co', :username => 'craigsy', :image => 'app/assets/images/robot-avatar-01.png'
-u2 = User.create :email => 'jonsey@ga.co', :username => 'DA-CLAW', :image => 'app/assets/images/claw-avatar-03.png'
-u3 = User.create :email => 'gary@ga.co', :username => 'Gary', :image => 'app/assets/images/robot-avatar-02.png'
+u1 = User.create :email => 'craigsy@ga.co', :username => 'craigsy', :image => 'app/assets/images/robot-avatar-01.png', :password => 'chicken'
+u2 = User.create :email => 'jonsey@ga.co', :username => 'DA-CLAW', :image => 'app/assets/images/claw-avatar-03.png', :password => 'chicken'
+u3 = User.create :email => 'gary@ga.co', :username => 'Gary', :image => 'app/assets/images/robot-avatar-02.png', :password => 'chicken'
 puts "#{ User.count } users."
 
 Post.destroy_all
