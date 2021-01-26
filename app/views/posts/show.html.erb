@@ -1,13 +1,13 @@
 <h1><%= @post.title %></h1>
 
-<div class="">
-  <%=  @post.example %>
+<div class="card">
+  <div class="card-body">
+    <pre><code><%=  @post.example %></code></pre>
+  </div>
 </div>
 
 <div class="">
-  <ul>
-    <li><%= @post.content %></li>
-  </ul>
+  <p><%= @post.content %></p>
 </div>
 
 <div class="">

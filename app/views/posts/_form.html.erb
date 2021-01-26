@@ -1,12 +1,19 @@
 <%= form_for @post do |p| %>
-  <%= p.label :title %>
-  <%= p.text_field :title, :autofocus => true %>
 
-  <%= p.label :example, 'Code Example' %>
-  <%= p.text_field :example, :required => true, :placeholder => 'Enter your code snippet here'%>
+  <div class="form-group">
+    <%= p.label :title %>
+    <%= p.text_field :title, :class => 'form-control', :autofocus => true %>
+  </div>
 
-  <%= p.label :content, 'Explantion / Study notes' %>
-  <%= p.text_field :content %>
+  <div class="form-group">
+    <%= p.label :example, 'Code Example' %>
+    <%= p.text_area :example, :class => 'form-control', :required => true, :placeholder => 'Enter your code snippet here'%>
+  </div>
 
-  <%= p.submit %>
+  <div class="form-group">
+    <%= p.label :content, 'Explantion / Study notes' %>
+    <%= p.text_area :content, :class => 'form-control' %>
+  </div>
+
+  <%= p.submit :class => 'btn-lg btn-outline-success' %>
 <% end %>
