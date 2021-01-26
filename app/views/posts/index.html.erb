@@ -1,0 +1,9 @@
+<h1>All Snippets</h1>
+
+<% @posts.each do | post | %>
+  <%= link_to post.title, post %>
+  <ul>
+    <li><%= link_to post.example, post %></li>
+  </ul>
+
+<% end %>

@@ -13,6 +13,8 @@
 
     <nav>
       <%= link_to 'Home', root_path %>
+      <%= link_to 'All posts', posts_path %>
+      <%= link_to 'New post', new_post_path %>
       <% if @current_user.present? %>
         <%= link_to "Log out #{ @current_user.username }", login_path, :method => 'delete' %>
       <% else %>

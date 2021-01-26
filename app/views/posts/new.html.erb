@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+
+<%= form_for @post do |p| %>
+  <%= p.label :title %>
+  <%= p.text_field :title, :autofocus => true %>
+
+  <%= p.label :example, 'Code Example' %>
+  <%= p.text_field :example, :required => true, :placeholder => 'Enter your code snippet here'%>
+
+  <%= p.label :content, 'Explantion / Study notes' %>
+  <%= p.text_field :content %>
+
+  <%= p.submit 'Post' %>
+<% end %>

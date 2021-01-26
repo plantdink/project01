@@ -1,0 +1,27 @@
+<h1><%= @post.title %></h1>
+
+<div class="">
+  <%=  @post.example %>
+</div>
+
+<div class="">
+  <ul>
+    <li><%= @post.content %></li>
+  </ul>
+</div>
+
+<div class="">
+  <ul>
+    <li>Posted by: <%= @post.user_id %></li>
+    <li>Posted: <%= @post.created_at.strftime '%a, %d, %B, %Y' %></li>
+    <li></li>
+  </ul>
+</div>
+
+<div class="">
+  #comment to go here
+</div>
+
+<div class="controls">
+  <%= button_to 'Delete post', @post, :method => 'delete' %>
+</div>
