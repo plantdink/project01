@@ -19,9 +19,16 @@
 </div>
 
 <div class="">
-  #comment to go here
+  <h2>Comments</h2>
+  <%= render @post.comments %>
+</div>
+
+<div class="">
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
 </div>
 
 <div class="controls">
+  <%= link_to 'Edit Post', edit_post_path(@post) %>
   <%= button_to 'Delete post', @post, :method => 'delete' %>
 </div>
