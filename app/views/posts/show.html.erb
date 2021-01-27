@@ -1,34 +1,43 @@
-<h1><%= @post.title %></h1>
+<div class="container-fluid">
 
-<div class="card">
-  <div class="card-body">
-    <pre><code><%=  @post.example %></code></pre>
+  <div class="row">
+    <h1><%= @post.title %></h1>
   </div>
-</div>
 
-<div class="">
-  <p><%= @post.content %></p>
-</div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card text-white bg-dark" style="">
+        <div class="card-body">
+          <p class="card-text"><pre><code><%=  @post.example %></code></pre></p>
+        </div>
+      </div>
+    </div>
 
-<div class="">
-  <ul>
-    <li>Posted by: <%= @post.user_id %></li>
-    <li>Posted: <%= @post.created_at.strftime '%a, %d, %B, %Y' %></li>
-    <li></li>
-  </ul>
-</div>
+    <div class="card" style="">
+      <div class="col-sm-8">
+        <div class="card-body">
+          <p class="card-text"><%= @post.content %></p>
+          <p class="card-text">Posted by:<%= @post.user_id %></p>
+          <p class="card-text"><small class="text-muted"><%= @post.created_at.strftime '%A, %d %B %Y' %></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="">
-  <h2>Comments</h2>
-  <%= render @post.comments %>
-</div>
+  <div class="row">
+    <div class="card" style="">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= render @post.comments %></li>
+      </ul>
+    </div>
+  </div>
 
-<div class="">
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
-</div>
+  <div class="row">
+    <p><%= render 'comments/form' %></p>
+  </div>
 
-<div class="controls">
-  <%= link_to 'Edit Post', edit_post_path(@post) %>
-  <%= button_to 'Delete post', @post, :method => 'delete' %>
+  <div class="controls">
+    <%= link_to 'Edit Post', edit_post_path(@post) %>
+    <%= button_to 'Delete post', @post, :method => 'delete' %>
+  </div>
 </div>
