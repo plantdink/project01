@@ -1,13 +1,19 @@
-<%= form_with model: [ @post, @post.comments.build ] do |f| %>
+<% if @current_user.present? %>
+  <%= form_with model: [ @post, @post.comments.build ], local: true do |f| %>
 
-<p>
-  <h5>Can you help?</h5>
-</p>
-<p>
-  <%= f.text_area :content %>
-</p>
+    <div class="form-group">
+      <p>
+        <h5>Can you help?</h5>
+      </p>
 
-<p>
-  <%= f.submit %>
-</p>
+      <p>
+        <%= f.text_area :content %>
+      </p>
+    </div>
+
+    <p>
+      <%= f.submit :class => 'btn-lg btn-outline-success' %>
+    </p>
+
+  <% end %>
 <% end %>
