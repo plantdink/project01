@@ -5,6 +5,6 @@
 
 <% if @current_user.present? %>
   <p>
-    <%= link_to 'Delete comment', [comment.post, comment], method: :delete, data: {confirm: "Are you sure?"} %>
+    <%= link_to 'Delete comment', [comment.post, comment], method: :delete, :role => 'button', :class => 'btn-sm btn-outline-danger', data: {confirm: "Are you sure?"} %>
   </p>
 <% end %>

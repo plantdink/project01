@@ -1,14 +1,20 @@
-<h1>All Snippets</h1>
+<div class="row">
+  <div class="col">
 
-<% @posts.each do | post | %>
-  <div class="row">
-    <div class="col-sm">
-      <div class="card bg-light mb-3" style="">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to post.title, post %></h5>
-          <p class="card-text"><%= post.example %></p>
+    <h1>All Snippets</h1>
+
+    <% @posts.each do | post | %>
+      <div class="row">
+        <div class="col-sm">
+          <div class="card bg-light mb-3" style="">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to post.title, post %></h5>
+              <p class="card-text"><%= post.example %></p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+    
   </div>
-<% end %>
+</div>
