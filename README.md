@@ -1,24 +1,40 @@
-# README
+# Project One
+> ## Code Snippet Study
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project One is a small code-snippet blog style. It has been developed using Ruby-on-Rails as a class project for the General Assembly Software Engineering Intensive course.
 
-Things you may want to cover:
+It is mainly displaying progress in:
+* Ruby
+* Database design & construction
+* Git & GitHub for version control during the development process
+* cloud deployment
+* first implementation of user authentication
+* other general programming concepts.
 
-* Ruby version
+## Built with
+- Ruby-on-Rails 5.2.4.4
 
-* System dependencies
+### Project dependencies
+- Bootstrap 4.5.3
+- jquery-rails 4.4.0
+- bcrypt 3.1.16 (for password hashing)
 
-* Configuration
+## To Do
+- Create a User account page
+  - show list of own post
+  - show list of own comments
+- Limit user delete to own posts & comments
+- Tagging of snippets with programming language & concepts
+- add a feature or random code snippet on the front page
+- Fix Delete and Edit post controls appearance and location
+- Fix edit comment controls.
 
-* Database creation
+## Links
 
-* Database initialization
+- Project homepage: https://calm-tundra-99309.herokuapp.com/
+- Repository: https://github.com/plantdink/project01
+- Issue Tracker: https://github.com/plantdink/project01/issues
 
-* How to run the test suite
+## Licensing
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The code in this project is licensed under MIT license. https://opensource.org/licenses/MIT
