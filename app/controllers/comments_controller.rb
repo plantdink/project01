@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+# This restricts the user input to the following:
   private
   def comment_params
     params.require(:comment).permit(:user_id, :content)

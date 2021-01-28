@@ -4,44 +4,51 @@
   </div>
 </div>
 
+<!-- This will create the code snippet card -->
 <div class="row">
-  <div class="col-4">
+  <div class="col">
     <div class="card text-white bg-dark" style="">
       <div class="card-body">
         <p class="card-text"><pre><code><%= @post.example %></code></pre></p>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="card" style="">
+<!-- This creates the snippet explanation notes card -->
+  <div class="row">
     <div class="col">
-      <div class="card-body">
-        <p class="card-text"><%= @post.content %></p>
-        <p class="card-text">Posted by: <%= @post.user %></p>
-        <p class="card-text"><small class="text-muted"><%= @post.created_at.strftime '%A, %d %B %Y' %></small></p>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><%= @post.content %></p>
+          <p class="card-text">Posted by: <%= @post.user.try :username%></p>
+          <p class="card-text"><small class="text-muted"><%= @post.created_at.strftime '%A, %d %B %Y' %></small></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+<!-- These buttons will show when a user is logged in, and allow editing & deleting of a code snippet post -->
 <div class="row">
-  <div class="col">
+  <div class="col-12">
     <% if @current_user.present?  %>
-        <%= link_to 'Edit Post', edit_post_path(@post), :class => 'btn-sm btn-outline-secondary', :role => 'button' %> <%= button_to 'Delete post', @post, :method => 'delete', :class => 'btn-sm btn-outline-danger' %>
+        <%= link_to 'Edit Post', edit_post_path(@post), :class => 'btn-sm btn-outline-secondary', :role => 'button' %><%= button_to 'Delete post', @post, :method => 'delete', :class => 'btn-sm btn-outline-danger' %>
     <% end %>
   </div>
 </div>
 
+<!-- Below here the post comments section will appear -->
 <% if @post.comments.empty? %>
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <!-- this is an empty div in case there are no comments for a post -->
     </div>
   </div>
 <% else %>
+<!-- This will loop through & display each comment that belongs to this post -->
   <div class="row">
-    <div class="col">
-      <div class="card" style="">
+    <div class="col-12">
+      <div class="card" >
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><%= render @post.comments %></li>
         </ul>
@@ -50,8 +57,9 @@
   </div>
 <% end %>
 
+<!-- This section will load the new comments form -->
 <div class="row">
-  <div class="col">
+  <div class="col-12">
     <p><%= render 'comments/form' %></p>
   </div>
 </div>

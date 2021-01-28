@@ -32,6 +32,7 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+# This will limit the inputs taken from the user to the following:
   private
   def post_params
     params.require(:post).permit(:title, :example, :content)

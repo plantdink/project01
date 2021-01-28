@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     end
   end
 
+# The below limits the inputs from the user during creation to the following:
   private
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)

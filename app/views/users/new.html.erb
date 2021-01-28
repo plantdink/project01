@@ -1,28 +1,59 @@
-<h1>Sign Up</h1>
+<!-- This partial will display the new sign up option -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1>Sign Up</h1>
+  </div>
+</div>
 
-<% if @user.errors.any? %>
-  <ol>
-    <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+<!-- This  will display an error message if login is not unsuccessful -->
+<div class="row">
+  <div class="col-lg-12">
+    <% if @user.errors.any? %>
+      <ol>
+        <% @user.errors.full_messages.each do |msg| %>
+        <div class="alert alert-danger" role="alert">
+          <li><%= msg %></li>
+        </div>
+        <% end %>
+      </ol>
     <% end %>
-  </ol>
-<% end %>
+  </div>
+</div>
 
 <%= form_for @user do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, :required => true, :class => 'form-control' %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, :required => true, :class => 'form-control' %>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, :class => 'form-control' %>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => 'form-control' %>
+    </div>
   </div>
+</div>
 
-  <div class="form-group">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, :class => 'form-control' %>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, :class => 'form-control' %>
+    </div>
   </div>
+</div>
 
-  <%= f.submit "Sign up!", :class => 'btn-lg btn-outline-success' %>
+
+<div class="row">
+    <div class="col-lg-12">
+    <%= f.submit "Sign up!", :class => 'btn-lg btn-outline-success' %>
+  </div>
+</div>
+
 <% end %>

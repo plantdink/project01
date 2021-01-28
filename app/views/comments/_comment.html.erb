@@ -1,8 +1,10 @@
+<!-- This section displays each comment that belongs to each post -->
   <p>
     <%= comment.content %><br>
-    Comment by: <%= comment.user %>
+    Comment by: <%= comment.user.try :username %>
   </p>
 
+<!-- The below controls will appear for any user that is logged in to the site, regardless of whether they own the post or comment -->
 <% if @current_user.present? %>
   <p>
     <%= link_to 'Delete comment', [comment.post, comment], method: :delete, :role => 'button', :class => 'btn-sm btn-outline-danger', data: {confirm: "Are you sure?"} %>
